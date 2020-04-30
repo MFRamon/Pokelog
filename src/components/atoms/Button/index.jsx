@@ -46,8 +46,13 @@ const ButtonContainer = styled.button`
 
 const Button = ({ onClick, children }) => {
   const [disabled, setDisabled] = useState(false);
+
+  const handleDisabled = () => {
+    setDisabled(!disabled);
+  };
+
   return (
-    <ButtonContainer disabled={disabled} onClick={onClick}>
+    <ButtonContainer disabled={handleDisabled} onClick={onClick}>
       {children}
     </ButtonContainer>
   );
@@ -56,6 +61,7 @@ const Button = ({ onClick, children }) => {
 
 Button.propTypes = {
   onClick: propTypes.func.isRequired,
+  children: propTypes.node.isRequired,
 };
 
 

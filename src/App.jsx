@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styling/themes';
 import { GlobalStyles } from './styling/global';
-import Button from './components/Button';
+import Button from './components/atoms/Button';
 
 const App = () => {
   const [theme, setTheme] = useState('light');
