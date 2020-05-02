@@ -1,7 +1,7 @@
 export const lightTheme = {
-  // TODO: Add Colors
+  main: '#FFCB05',
 };
 
 export const darkTheme = {
-  // TODO: Add Colors
+  main: '#121212',
 };

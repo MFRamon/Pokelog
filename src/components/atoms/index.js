@@ -4,6 +4,7 @@ import Container from './Container';
 import Layout from './Layout';
 import Textfield from './Textfield';
 import Title from './Title';
+import Searchbar from './Searchbar';
 
 
 export {
@@ -13,4 +14,5 @@ export {
   Layout,
   Textfield,
   Title,
+  Searchbar,
 };

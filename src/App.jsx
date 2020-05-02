@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from './styling/themes';
+import { lightTheme, darkTheme } from './styling/theme';
 import { GlobalStyles } from './styling/global';
 import {
-  Layout, Container, Aside, Button,
+  Layout, Container, Aside, Button, Searchbar, Title,
 } from './components/atoms';
 
 const Wrapper = styled.div`
@@ -14,8 +14,7 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: 1024px) {
-    align-self: center;
-    margin: 7.5rem 0 0;
+    margin: 0 0 0;
     width: 100%;
   }
 `;
@@ -28,6 +27,7 @@ const App = () => {
   const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
+    console.log('Llamo la funcion');
     if (theme === 'light') {
       setTheme('dark');
     } else {
@@ -38,10 +38,12 @@ const App = () => {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <Layout>
+      <Layout theme={theme}>
         <Wrapper>
           <Container>
             <Content>
+              <Title>Pokeshop</Title>
+              <Searchbar />
               <Button onClick={toggleTheme}>Change Theme</Button>
             </Content>
           </Container>

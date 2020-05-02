@@ -44,19 +44,11 @@ const ButtonContainer = styled.button`
 `;
 
 
-const Button = ({ onClick, children }) => {
-  const [disabled, setDisabled] = useState(false);
-
-  const handleDisabled = () => {
-    setDisabled(!disabled);
-  };
-
-  return (
-    <ButtonContainer disabled={handleDisabled} onClick={onClick}>
-      {children}
-    </ButtonContainer>
-  );
-};
+const Button = ({ onClick, children }) => (
+  <ButtonContainer onClick={onClick}>
+    {children}
+  </ButtonContainer>
+);
 
 
 Button.propTypes = {
