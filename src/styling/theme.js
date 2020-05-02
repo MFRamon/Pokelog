@@ -1,7 +1,9 @@
 export const lightTheme = {
-  main: '#FFCB05',
+  leftLayout: '#FFCB05',
+  rightLayout: '#FFFFFF',
 };
 
 export const darkTheme = {
-  main: '#121212',
+  leftLayout: '#121212',
+  rightLayout: '#2A2D32',
 };
