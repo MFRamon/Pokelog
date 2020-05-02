@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styling/theme';
 import { GlobalStyles } from './styling/global';
 import {
-  Layout, Container, Aside, Button, Searchbar, Title, Card, Logo,
+  Layout, Container, Aside, Button, Searchbar, Card, Logo,
 } from './components/atoms';
 import PokemonLogo from './res/images/pokemon-logo.png';
 import Paragragh from './components/atoms/Paragraph';
