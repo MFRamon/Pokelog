@@ -5,8 +5,8 @@ import Button from '../../../components/atoms/Button';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('<MyComponent />', () => {
-  it('renders three <Foo /> components', () => {
+describe('<Button />', () => {
+  it('renders component', () => {
     const wrapper = shallow(<Button />);
     expect(wrapper).toBeTruthy();
   });
