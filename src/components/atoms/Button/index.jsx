@@ -12,6 +12,7 @@ const ButtonContainer = styled.button`
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 20px;
   cursor: pointer;
   width: 240px;
+  height: 50px;
   font-size: 0.9375rem;
   margin: 1.25rem 1.5rem;
   border-width: 0.063rem;
@@ -19,7 +20,6 @@ const ButtonContainer = styled.button`
   border-color: rgba(0, 0, 0, 0.05);
   padding: 0.8125rem 1.875rem;
   border-radius: 0.5rem;
-  flex: 1 1 0%;
   transition: transform 0.2s ease 0s;
   font-family: 'Affogato Regular';
 

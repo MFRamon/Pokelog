@@ -23,8 +23,8 @@ const Aside = styled.aside`
     border-width: 0.063rem;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.05);
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
   }
 `;
 
