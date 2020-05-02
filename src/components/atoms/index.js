@@ -5,6 +5,7 @@ import Layout from './Layout';
 import Title from './Title';
 import Searchbar from './Searchbar';
 import Card from './Card';
+import Logo from './Logo';
 
 
 export {
@@ -15,4 +16,5 @@ export {
   Title,
   Searchbar,
   Card,
+  Logo,
 };
