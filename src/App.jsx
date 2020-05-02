@@ -49,12 +49,15 @@ const App = () => {
   const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
-    console.log('Llamo la funcion');
     if (theme === 'light') {
       setTheme('dark');
     } else {
       setTheme('light');
     }
+  };
+
+  const getMorePokemons = () => {
+    // TODO: Implement Funcionality
   };
 
   return (
@@ -120,8 +123,9 @@ const App = () => {
                   <Paragragh>Hello</Paragragh>
                 </Card>
               </ContentPokemons>
-
-              {/* <Title>Crafted by MFRamon</Title> */}
+              <LogoWrapper>
+                <Button background="#2A2D32" whiteText={false} onClick={getMorePokemons}>Next 20 Pokemons</Button>
+              </LogoWrapper>
             </Content>
           </Container>
         </Wrapper>
