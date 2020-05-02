@@ -39,10 +39,13 @@ const Button = ({ onClick, children }) => (
   </ButtonContainer>
 );
 
+Button.defaultProps = {
+  children: 'Default Text',
+};
 
 Button.propTypes = {
   onClick: propTypes.func.isRequired,
-  children: propTypes.node.isRequired,
+  children: propTypes.node,
 };
 
 

@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import propTypes from 'prop-types';
 
 const Wrapper = styled.div`
-  width: 18%;
   display: block;
   background-color: ${({ theme }) => theme.cardElevated};
   border-radius: 0.5rem;
-  margin: 1.0rem 1.0rem;
+  margin: 0.4rem 0.4rem;
 
   &:hover {
     cursor: pointer;

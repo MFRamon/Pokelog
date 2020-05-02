@@ -33,6 +33,18 @@ const LogoWrapper = styled.div`
   width: 75%;
 `;
 
+const ContentPokemons = styled.div`
+  width: 75%;
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  margin: 1.0rem 1.0rem;
+  flex-wrap: wrap;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+`;
+
 const App = () => {
   const [theme, setTheme] = useState('light');
 
@@ -58,14 +70,57 @@ const App = () => {
                 <Button onClick={toggleTheme}>Change Theme</Button>
               </LogoWrapper>
               <Searchbar />
-              <Card>
-                <Paragragh>Hello</Paragragh>
-                <Paragragh>Hello</Paragragh>
-              </Card>
-              <Card>
-                <Paragragh>Hello</Paragragh>
-                <Paragragh>Hello</Paragragh>
-              </Card>
+              <ContentPokemons>
+                <Card>
+                  <Paragragh>Hello</Paragragh>
+                  <Paragragh>Hello</Paragragh>
+                </Card>
+                <Card>
+                  <Paragragh>Hello</Paragragh>
+                  <Paragragh>Hello</Paragragh>
+                </Card>
+                <Card>
+                  <Paragragh>Hello</Paragragh>
+                  <Paragragh>Hello</Paragragh>
+                </Card>
+                <Card>
+                  <Paragragh>Hello</Paragragh>
+                  <Paragragh>Hello</Paragragh>
+                </Card>
+                <Card>
+                  <Paragragh>Hello</Paragragh>
+                  <Paragragh>Hello</Paragragh>
+                </Card>
+                <Card>
+                  <Paragragh>Hello</Paragragh>
+                  <Paragragh>Hello</Paragragh>
+                </Card>
+                <Card>
+                  <Paragragh>Hello</Paragragh>
+                  <Paragragh>Hello</Paragragh>
+                </Card>
+                <Card>
+                  <Paragragh>Hello</Paragragh>
+                  <Paragragh>Hello</Paragragh>
+                </Card>
+                <Card>
+                  <Paragragh>Hello</Paragragh>
+                  <Paragragh>Hello</Paragragh>
+                </Card>
+                <Card>
+                  <Paragragh>Hello</Paragragh>
+                  <Paragragh>Hello</Paragragh>
+                </Card>
+                <Card>
+                  <Paragragh>Hello</Paragragh>
+                  <Paragragh>Hello</Paragragh>
+                </Card>
+                <Card>
+                  <Paragragh>Hello</Paragragh>
+                  <Paragragh>Hello</Paragragh>
+                </Card>
+              </ContentPokemons>
+
               {/* <Title>Crafted by MFRamon</Title> */}
             </Content>
           </Container>

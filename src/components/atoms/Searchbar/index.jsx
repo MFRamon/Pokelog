@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Control = styled.input`
-  width: 70%;
+  width: 72%;
   height: 50px;
   border-width: 0.063rem;
   border-style: solid;
