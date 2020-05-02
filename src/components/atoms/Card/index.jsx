@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import propTypes from 'prop-types';
 
 const Wrapper = styled.div`
   width: 18%;
   display: block;
   background-color: ${({ theme }) => theme.cardElevated};
-  border-radius: 25px;
+  border-radius: 0.5rem;
   margin: 1.0rem 1.0rem;
 
   &:hover {
@@ -52,24 +53,34 @@ const BottomContent = styled.div`
     width: 100%;
     height: 40%;
     display: flex;
-
+    background-color: red;
+    border-radius: 0.5rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-size: 0.9375rem;
+    align-items: center;
+    justify-content: space-evenly;
 `;
 
-const Card = () => (
+const Card = ({ children }) => (
   <Wrapper>
     <Content>
       <TopContent>
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png" alt="App Name" />
       </TopContent>
-      <BottomContent />
+      <BottomContent>
+        {children}
+      </BottomContent>
     </Content>
   </Wrapper>
 );
 
+Card.defaultProps = {
+  children: 'Default Text',
+};
 
 Card.propTypes = {
-  // onClick: propTypes.func.isRequired,
-  // children: propTypes.node.isRequired,
+  children: propTypes.node,
 };
 
 

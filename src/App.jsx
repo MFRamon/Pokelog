@@ -3,10 +3,10 @@ import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styling/theme';
 import { GlobalStyles } from './styling/global';
 import {
-  Layout, Container, Aside, Button, Searchbar, Title, Card,
+  Layout, Container, Aside, Button, Searchbar, Title, Card, Logo,
 } from './components/atoms';
-import Logo from './components/atoms/Logo';
 import PokemonLogo from './res/images/pokemon-logo.png';
+import Paragragh from './components/atoms/Paragraph';
 
 const Wrapper = styled.div`
   margin: 10rem 0;
@@ -58,8 +58,15 @@ const App = () => {
                 <Button onClick={toggleTheme}>Change Theme</Button>
               </LogoWrapper>
               <Searchbar />
-              <Card />
-              <Title>Crafted by MFRamon</Title>
+              <Card>
+                <Paragragh>Hello</Paragragh>
+                <Paragragh>Hello</Paragragh>
+              </Card>
+              <Card>
+                <Paragragh>Hello</Paragragh>
+                <Paragragh>Hello</Paragragh>
+              </Card>
+              {/* <Title>Crafted by MFRamon</Title> */}
             </Content>
           </Container>
         </Wrapper>
