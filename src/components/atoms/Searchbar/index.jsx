@@ -11,6 +11,16 @@ const Control = styled.input`
   border-radius: 0.5rem;
   margin: 1.25rem 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 20px;
+  background-color: ${({ theme }) => theme.inputBackground};
+  font-size: 0.9375rem;
+  font-family: 'Affogato Regular';
+  border-color: ${({ theme }) => theme.searchBorder};
+
+  
+
+  ::placeholder {
+    color: ${({ theme }) => theme.placeholder};
+  }
 `;
 
 

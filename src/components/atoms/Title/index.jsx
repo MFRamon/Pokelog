@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Title = styled.h2`
-  color: ${({ theme, primaryColor }) => (primaryColor ? theme.primaryColor : theme.textColor)};
+  color: ${({ theme }) => theme.text};
   font-size: ${({ big }) => (big ? '2.6rem' : '2.2rem')};
   margin: 1.25rem 1.5rem;
 
