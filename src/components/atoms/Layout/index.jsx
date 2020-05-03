@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: red
+  background-color: ${({ theme }) => theme.leftLayout};
 `;
 
 const Main = styled.main`

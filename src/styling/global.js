@@ -26,10 +26,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.main};
-    color: ${({ theme }) => theme.main};
     font-family: Affogato Regular;
     font-weight: 400;
     font-size: 1.8em;
+    margin: 0;
   }  
 `;

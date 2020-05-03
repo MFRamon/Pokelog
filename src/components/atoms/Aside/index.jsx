@@ -17,8 +17,14 @@ const Aside = styled.aside`
     right: 0;
     top: 0;
     height: 100vh;
-    width: 30vw;
-    background-color: blue;
+    width: 35vw;
+    background-color: ${({ theme }) => theme.rightLayout};
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 4px 25px;
+    border-width: 0.063rem;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.05);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
   }
 `;
 
