@@ -15,17 +15,14 @@ const Control = styled.input`
   font-size: 0.9375rem;
   font-family: 'Affogato Regular';
   border-color: ${({ theme }) => theme.searchBorder};
-
   
-
   ::placeholder {
     color: ${({ theme }) => theme.placeholder};
   }
 `;
 
 
-const Searchbar = () => (
-  <Control placeholder="Search for Pokemons" type="text" />
-);
+// eslint-disable-next-line react/prop-types
+const Searchbar = ({ value, handleChange }) => (<Control value={value} onChange={handleChange} placeholder="Search for Pokemons" type="text" />);
 
 export default Searchbar;

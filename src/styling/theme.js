@@ -7,6 +7,7 @@ export const lightTheme = {
   inputBackground: '#FFFFFF',
   placeholder: '#000000',
   searchBorder: 'transparent',
+  nextButton: '#3D7DCA',
 };
 
 export const darkTheme = {
@@ -18,4 +19,5 @@ export const darkTheme = {
   inputBackground: '#2A2D32',
   placeholder: '#FFFFFF',
   searchBorder: '#FFFFFF',
+  nextButton: '#2A2D32',
 };

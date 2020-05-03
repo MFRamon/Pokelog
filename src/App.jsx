@@ -3,10 +3,12 @@ import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styling/theme';
 import { GlobalStyles } from './styling/global';
 import {
-  Layout, Container, Aside, Button, Searchbar, Card, Logo,
+  Layout, Container, Aside, Button, Searchbar, Logo,
 } from './components/atoms';
 import PokemonLogo from './res/images/pokemon-logo.png';
 import Paragragh from './components/atoms/Paragraph';
+import { CardList } from './components/common';
+import { useFetch } from './utils/useFetch';
 
 const Wrapper = styled.div`
   margin: 10rem 0;
@@ -47,9 +49,12 @@ const ContentPokemons = styled.div`
 
 const App = () => {
   const [theme, setTheme] = useState('light');
+  const [counter, setCounter] = useState(0);
+  const [word, setWord] = useState('');
+  const { pokemons, loading } = useFetch(`https://pokeapi.co/api/v2/pokemon/?offset=${counter}&limit=20`);
+
 
   const toggleTheme = () => {
-    console.log('Llamo la funcion');
     if (theme === 'light') {
       setTheme('dark');
     } else {
@@ -57,9 +62,12 @@ const App = () => {
     }
   };
 
+  const handleChange = (e) => {
+    setWord(e);
+  };
+
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-
       <GlobalStyles />
       <Layout theme={theme}>
         <Wrapper>
@@ -69,59 +77,15 @@ const App = () => {
                 <Logo src={PokemonLogo} />
                 <Button onClick={toggleTheme}>Change Theme</Button>
               </LogoWrapper>
-              <Searchbar />
+              <Searchbar value={word} handleChange={(e) => handleChange(e.target.value)} />
               <ContentPokemons>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
+                {loading === false
+                  ? <CardList query={word} cards={pokemons} />
+                  : <Paragragh>This is Loading</Paragragh>}
               </ContentPokemons>
-
-              {/* <Title>Crafted by MFRamon</Title> */}
+              <LogoWrapper>
+                <Button background="#2A2D32" whiteText={false} onClick={() => setCounter((c) => c + 20)}>Next 20 Pokemons</Button>
+              </LogoWrapper>
             </Content>
           </Container>
         </Wrapper>
