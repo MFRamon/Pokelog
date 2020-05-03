@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styling/theme';
 import { GlobalStyles } from './styling/global';
@@ -7,6 +7,7 @@ import {
 } from './components/atoms';
 import PokemonLogo from './res/images/pokemon-logo.png';
 import Paragragh from './components/atoms/Paragraph';
+import { CardList } from './components/common';
 
 const Wrapper = styled.div`
   margin: 10rem 0;
@@ -56,8 +57,27 @@ const App = () => {
     }
   };
 
-  const getMorePokemons = () => {
-    // TODO: Implement Funcionality
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    const url = 'https://pokeapi.co/api/v2/pokemon';
+    fetch(url)
+      .then((response) => response.json())
+      .then((response) => {
+        if (response) {
+          setData({ pokemons: response.results }, () => {});
+          setLoading(false);
+        }
+        console.log(data);
+      })
+      .catch(console.log);
+  }, [data]);
+
+
+  const getMorePokemons = (c) => {
+    setCounter(c + 1);
   };
 
   return (
@@ -74,57 +94,12 @@ const App = () => {
               </LogoWrapper>
               <Searchbar />
               <ContentPokemons>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
-                <Card>
-                  <Paragragh>Hello</Paragragh>
-                  <Paragragh>Hello</Paragragh>
-                </Card>
+                {loading
+                  ? <Paragragh>This is Loading</Paragragh>
+                  : <CardList cards={data.pokemons} />}
               </ContentPokemons>
               <LogoWrapper>
-                <Button background="#2A2D32" whiteText={false} onClick={getMorePokemons}>Next 20 Pokemons</Button>
+                <Button background="#2A2D32" whiteText={false} onClick={() => getMorePokemons(counter)}>Next 20 Pokemons</Button>
               </LogoWrapper>
             </Content>
           </Container>
