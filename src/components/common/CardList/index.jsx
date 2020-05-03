@@ -3,9 +3,7 @@ import Card from '../Card';
 
 const CardList = ({ cards }) => (
   cards.map((card) => (
-    <Card name={card.name} weight={card.weight}>
-      {card.children}
-    </Card>
+    <Card name={card.name} url={card.url} />
   ))
 
 );

@@ -73,9 +73,9 @@ const App = () => {
               </LogoWrapper>
               <Searchbar />
               <ContentPokemons>
-                {loading
-                  ? <Paragragh>This is Loading</Paragragh>
-                  : <CardList cards={pokemons} />}
+                {pokemons
+                  ? <CardList cards={pokemons} />
+                  : <Paragragh>This is Loading</Paragragh>}
               </ContentPokemons>
               <LogoWrapper>
                 <Button background="#2A2D32" whiteText={false} onClick={() => setCounter((c) => c + 20)}>Next 20 Pokemons</Button>
