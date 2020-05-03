@@ -70,7 +70,7 @@ const Sprite = styled.img`
 const Card = ({ name, url }) => {
   // eslint-disable-next-line react/prop-types
   const pokemonIndex = url.split('/')[url.split('/').length - 2];
-  const imageUrl = `https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon/${pokemonIndex}.png?raw=true`;
+  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
 
   return (
     <Wrapper>
