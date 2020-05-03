@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
+import Paragraph from '../../atoms/Paragraph';
 
 const Wrapper = styled.div`
-  display: block;
+  display: inline-block;
   background-color: ${({ theme }) => theme.cardElevated};
   border-radius: 0.5rem;
   margin: 0.4rem 0.4rem;
@@ -61,25 +62,42 @@ const BottomContent = styled.div`
     justify-content: space-evenly;
 `;
 
-const Card = ({ children }) => (
-  <Wrapper>
-    <Content>
-      <TopContent>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png" alt="App Name" />
-      </TopContent>
-      <BottomContent>
-        {children}
-      </BottomContent>
-    </Content>
-  </Wrapper>
-);
+const Sprite = styled.img`
+  width: 5em;
+  height: 5em;
+`;
+
+const Card = ({ name, url }) => {
+  // eslint-disable-next-line react/prop-types
+  const pokemonIndex = url.split('/')[url.split('/').length - 2];
+  const imageUrl = `https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon/${pokemonIndex}.png?raw=true`;
+
+  return (
+    <Wrapper>
+      <Content>
+        <TopContent>
+          <Sprite
+            src={imageUrl}
+            alt="Pokemon"
+          />
+        </TopContent>
+        <BottomContent>
+          <Paragraph>{name}</Paragraph>
+        </BottomContent>
+      </Content>
+    </Wrapper>
+  );
+};
+
 
 Card.defaultProps = {
-  children: 'Default Text',
+  name: 'Default Name',
+  url: 'Default URL',
 };
 
 Card.propTypes = {
-  children: propTypes.node,
+  name: propTypes.string,
+  url: propTypes.string,
 };
 
 
