@@ -53,7 +53,7 @@ const BottomContent = styled.div`
     width: 100%;
     height: 40%;
     display: flex;
-    background-color: red;
+    background-color: ${({ theme }) => theme.cardCover};
     border-radius: 0.5rem;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -70,7 +70,7 @@ const Sprite = styled.img`
 const Card = ({ name, url }) => {
   // eslint-disable-next-line react/prop-types
   const pokemonIndex = url.split('/')[url.split('/').length - 2];
-  const imageUrl = `https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon/${pokemonIndex}.png?raw=true`;
+  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
 
   return (
     <Wrapper>
