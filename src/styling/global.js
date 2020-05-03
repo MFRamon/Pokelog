@@ -4,7 +4,6 @@ import FoundryGridnikWoff from '../res/fonts/regular/Foundry-Gridnik-Regular.wof
 
 // eslint-disable-next-line import/prefer-default-export
 export const GlobalStyles = createGlobalStyle`
-
   @font-face {
     font-family: 'Affogato Regular';
     src: url(${FoundryGridnikWoff}) format('woff'),

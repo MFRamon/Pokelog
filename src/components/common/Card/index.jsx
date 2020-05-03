@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 import Paragraph from '../../atoms/Paragraph';
 
 const Wrapper = styled.div`
-  display: block;
+  display: inline-block;
   background-color: ${({ theme }) => theme.cardElevated};
   border-radius: 0.5rem;
   margin: 0.4rem 0.4rem;

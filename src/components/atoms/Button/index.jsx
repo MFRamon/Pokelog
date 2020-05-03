@@ -41,11 +41,13 @@ const Button = ({ onClick, children, background }) => (
 
 Button.defaultProps = {
   children: 'Default Text',
+  background: '',
 };
 
 Button.propTypes = {
   onClick: propTypes.func.isRequired,
   children: propTypes.node,
+  background: propTypes.string,
 };
 
 

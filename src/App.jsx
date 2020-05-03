@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styling/theme';
 import { GlobalStyles } from './styling/global';
 import {
-  Layout, Container, Aside, Button, Searchbar, Card, Logo,
+  Layout, Container, Aside, Button, Searchbar, Logo,
 } from './components/atoms';
 import PokemonLogo from './res/images/pokemon-logo.png';
 import Paragragh from './components/atoms/Paragraph';
@@ -50,7 +50,9 @@ const ContentPokemons = styled.div`
 const App = () => {
   const [theme, setTheme] = useState('light');
   const [counter, setCounter] = useState(0);
+  const [word, setWord] = useState('');
   const { pokemons, loading } = useFetch(`https://pokeapi.co/api/v2/pokemon/?offset=${counter}&limit=20`);
+
 
   const toggleTheme = () => {
     if (theme === 'light') {
@@ -58,6 +60,10 @@ const App = () => {
     } else {
       setTheme('light');
     }
+  };
+
+  const handleChange = (e) => {
+    setWord(e);
   };
 
   return (
@@ -71,10 +77,10 @@ const App = () => {
                 <Logo src={PokemonLogo} />
                 <Button onClick={toggleTheme}>Change Theme</Button>
               </LogoWrapper>
-              <Searchbar />
+              <Searchbar value={word} handleChange={(e) => handleChange(e.target.value)} />
               <ContentPokemons>
-                {pokemons
-                  ? <CardList cards={pokemons} />
+                {loading === false
+                  ? <CardList query={word} cards={pokemons} />
                   : <Paragragh>This is Loading</Paragragh>}
               </ContentPokemons>
               <LogoWrapper>

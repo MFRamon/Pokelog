@@ -1,6 +1,7 @@
 import CardList from './CardList';
+import Card from './Card';
 
 export {
-  // eslint-disable-next-line import/prefer-default-export
   CardList,
+  Card,
 };
