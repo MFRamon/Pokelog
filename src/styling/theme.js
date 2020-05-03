@@ -8,6 +8,7 @@ export const lightTheme = {
   placeholder: '#000000',
   searchBorder: 'transparent',
   nextButton: '#3D7DCA',
+  cardCover: '#FFFFFF',
 };
 
 export const darkTheme = {
@@ -20,4 +21,5 @@ export const darkTheme = {
   placeholder: '#FFFFFF',
   searchBorder: '#FFFFFF',
   nextButton: '#2A2D32',
+  cardCover: '#2A2D32',
 };

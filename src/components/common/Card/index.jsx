@@ -53,7 +53,7 @@ const BottomContent = styled.div`
     width: 100%;
     height: 40%;
     display: flex;
-    background-color: red;
+    background-color: ${({ theme }) => theme.cardCover};
     border-radius: 0.5rem;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
