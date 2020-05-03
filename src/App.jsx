@@ -6,6 +6,7 @@ import {
   Layout, Container, Aside, Button, Searchbar, Logo,
 } from './components/atoms';
 import PokemonLogo from './res/images/pokemon-logo.png';
+import PokemonDarkLogo from './res/images/pokemon-logo-dark.png';
 import Paragragh from './components/atoms/Paragraph';
 import { CardList } from './components/common';
 import { useFetch } from './utils/useFetch';
@@ -74,7 +75,7 @@ const App = () => {
           <Container>
             <Content>
               <LogoWrapper>
-                <Logo src={PokemonLogo} />
+                <Logo src={theme === 'light' ? PokemonLogo : PokemonDarkLogo} />
                 <Button onClick={toggleTheme}>Change Theme</Button>
               </LogoWrapper>
               <Searchbar value={word} handleChange={(e) => handleChange(e.target.value)} />
