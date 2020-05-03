@@ -8,6 +8,7 @@ import {
 import PokemonLogo from './res/images/pokemon-logo.png';
 import Paragragh from './components/atoms/Paragraph';
 import { CardList } from './components/common';
+import { useFetch } from './utils/useFetch';
 
 const Wrapper = styled.div`
   margin: 10rem 0;
@@ -48,6 +49,8 @@ const ContentPokemons = styled.div`
 
 const App = () => {
   const [theme, setTheme] = useState('light');
+  const [counter, setCounter] = useState(0);
+  const { pokemons, loading } = useFetch(`https://pokeapi.co/api/v2/pokemon/?offset=${counter}&limit=20`);
 
   const toggleTheme = () => {
     if (theme === 'light') {
@@ -57,32 +60,8 @@ const App = () => {
     }
   };
 
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [counter, setCounter] = useState(0);
-
-  useEffect(() => {
-    const url = 'https://pokeapi.co/api/v2/pokemon';
-    fetch(url)
-      .then((response) => response.json())
-      .then((response) => {
-        if (response) {
-          setData({ pokemons: response.results }, () => {});
-          setLoading(false);
-        }
-        console.log(data);
-      })
-      .catch(console.log);
-  }, [data]);
-
-
-  const getMorePokemons = (c) => {
-    setCounter(c + 1);
-  };
-
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-
       <GlobalStyles />
       <Layout theme={theme}>
         <Wrapper>
@@ -96,10 +75,10 @@ const App = () => {
               <ContentPokemons>
                 {loading
                   ? <Paragragh>This is Loading</Paragragh>
-                  : <CardList cards={data.pokemons} />}
+                  : <CardList cards={pokemons} />}
               </ContentPokemons>
               <LogoWrapper>
-                <Button background="#2A2D32" whiteText={false} onClick={() => getMorePokemons(counter)}>Next 20 Pokemons</Button>
+                <Button background="#2A2D32" whiteText={false} onClick={() => setCounter((c) => c + 20)}>Next 20 Pokemons</Button>
               </LogoWrapper>
             </Content>
           </Container>

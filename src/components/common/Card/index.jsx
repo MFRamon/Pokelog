@@ -63,7 +63,7 @@ const BottomContent = styled.div`
 `;
 
 const Card = ({
-  children, image, name, weight,
+  image, name,
 }) => (
   <Wrapper>
     <Content>
@@ -72,25 +72,17 @@ const Card = ({
       </TopContent>
       <BottomContent>
         <Paragraph>{name}</Paragraph>
-        <Paragraph>{weight}</Paragraph>
-        {children}
       </BottomContent>
     </Content>
   </Wrapper>
 );
 
 Card.defaultProps = {
-  children: 'Default Text',
   name: 'Default Name',
-  weight: 'Default Weight',
-  image: 'https://picsum.photos/200/300?grayscale',
 };
 
 Card.propTypes = {
-  children: propTypes.node,
   name: propTypes.string,
-  weight: propTypes.string,
-  image: propTypes.string,
 };
 
 
