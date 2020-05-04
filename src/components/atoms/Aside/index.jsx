@@ -1,10 +1,13 @@
+import React from 'react';
 import styled from 'styled-components';
+import propTypes from 'prop-types';
+import Paragragh from '../Paragraph';
+import Title from '../Title';
 
-const Aside = styled.aside`
+
+const Wrapper = styled.aside`
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
+  display: block;
   width: 100%;
 
   @media (min-width: 1024px) {
@@ -27,5 +30,60 @@ const Aside = styled.aside`
     border-bottom-left-radius: 2rem;
   }
 `;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 2rem;
+  height: 100%;
+`;
+
+const TopContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 2rem;
+  height: 20%;
+`;
+
+const BottomContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 2rem;
+  height: 80%;
+`;
+
+
+const Sprite = styled.img`
+  width: 6em;
+  height: 6em;
+`;
+
+const Aside = ({ pokemonDetail }) => (
+  <Wrapper>
+    <Content>
+      {pokemonDetail !== null ? (
+        <>
+          <TopContent>
+            <Sprite src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" />
+          </TopContent>
+          <BottomContent>
+            <Paragragh>{pokemonDetail.name}</Paragragh>
+            <Paragragh>{pokemonDetail.url}</Paragragh>
+            <Paragragh>This is a pokemon</Paragragh>
+            <Paragragh>This is a pokemon</Paragragh>
+            <Paragragh>This is a pokemon</Paragragh>
+          </BottomContent>
+        </>
+      )
+        : <Title>No Pokemon Selected</Title>}
+    </Content>
+  </Wrapper>
+);
+
+Aside.propTypes = {
+  pokemonDetail: propTypes.node.isRequired,
+};
 
 export default Aside;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import Card from '../Card';
@@ -7,24 +7,16 @@ const Wrapper = styled.div`
   display: inline-block;
 `;
 
-const CardList = ({ cards, query }) => {
-  const [pokemonSelected, setPokemonSelected] = useState();
-
-  const handleSelectedPokemon = (pokemon) => {
-    setPokemonSelected(pokemon);
-  };
-
+const Cards = ({ cards, query, selected }) => {
   const pokemons = cards
     .filter((pokemon) => (pokemon.name.toLowerCase().indexOf(query.toLowerCase()) >= 0))
     .map((pokemon) => (
       <Card
-        onClick={() => handleSelectedPokemon(pokemon)}
-        selected={pokemonSelected}
+        onClick={() => selected(pokemon)}
         name={pokemon.name}
         url={pokemon.url}
       />
     ));
-
 
   return (
     <Wrapper>
@@ -33,15 +25,17 @@ const CardList = ({ cards, query }) => {
   );
 };
 
-CardList.defaultProps = {
-  query: '',
+Cards.defaultProps = {
+  query: null,
   cards: [],
+  selected: undefined,
 };
 
-CardList.propTypes = {
-  cards: propTypes,
+Cards.propTypes = {
+  cards: propTypes.node,
   query: propTypes.string,
+  selected: propTypes.func,
 };
 
 
-export default CardList;
+export default Cards;

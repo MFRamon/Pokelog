@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
@@ -69,13 +68,13 @@ const Sprite = styled.img`
 `;
 
 const Card = ({
-  name, url, onClick, selected,
+  name, url, onClick,
 }) => {
   const pokemonIndex = url.split('/')[url.split('/').length - 2];
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
 
   return (
-    <Wrapper onClick={onClick} selected={selected}>
+    <Wrapper onClick={onClick}>
       <Content>
         <TopContent>
           <Sprite
@@ -96,14 +95,12 @@ Card.defaultProps = {
   name: 'Default Name',
   url: 'Default URL',
   onClick: undefined,
-  selected: null,
 };
 
 Card.propTypes = {
   name: propTypes.string,
   url: propTypes.string,
   onClick: propTypes.func,
-  selected: propTypes.object,
 };
 
 

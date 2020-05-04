@@ -60,8 +60,8 @@ const App = () => {
   const [theme, setTheme] = useState('light');
   const [counter, setCounter] = useState(0);
   const [word, setWord] = useState('');
+  const [selectedItem, setSelectedItem] = useState(null);
   const { pokemons, loading } = useFetch(`https://pokeapi.co/api/v2/pokemon/?offset=${counter}&limit=20`);
-
 
   const toggleTheme = () => {
     if (theme === 'light') {
@@ -73,6 +73,11 @@ const App = () => {
 
   const handleChange = (e) => {
     setWord(e);
+  };
+
+
+  const handleSelectedPokemon = (pokemon) => {
+    setSelectedItem(pokemon);
   };
 
   return (
@@ -89,7 +94,7 @@ const App = () => {
               <Searchbar value={word} handleChange={(e) => handleChange(e.target.value)} />
               <WrapperPokemons>
                 {loading === false
-                  ? <Cards query={word} cards={pokemons} />
+                  ? <Cards selected={handleSelectedPokemon} query={word} cards={pokemons} />
                   : <Paragragh>This is Loading</Paragragh>}
               </WrapperPokemons>
               <BottomWrapper>
@@ -98,7 +103,7 @@ const App = () => {
             </Content>
           </Container>
         </Wrapper>
-        <Aside />
+        <Aside pokemonDetail={selectedItem} />
       </Layout>
 
     </ThemeProvider>
