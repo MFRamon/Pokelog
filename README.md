@@ -13,6 +13,13 @@ The tech stack used is:
 * ESLint
 * Styled Components
 
+Future Features to implement: 
+
+* Master-detail view on each Pokemon
+* Allow the users to search by Pokemon Categories
+* Add Animation on Load on the Browser
+* Add Responsiveness for Mobile
+
 
 
 **Hosted by Vercel(formely Zeit)**
