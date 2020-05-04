@@ -28,17 +28,25 @@ const Content = styled.div`
   max-width: 60rem;
 `;
 
-const LogoWrapper = styled.div`
+const TopWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 75%;
+  width: 82%;
 `;
 
-const ContentPokemons = styled.div`
-  width: 75%;
-  height: 50vh;
+const BottomWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 82%;
+`;
+
+const WrapperPokemons = styled.div`
+  width: 82%;
+  height: 52vh;
   display: flex;
   flex-direction: row;
   margin: 1.0rem 1.0rem;
@@ -74,19 +82,19 @@ const App = () => {
         <Wrapper>
           <Container>
             <Content>
-              <LogoWrapper>
+              <TopWrapper>
                 <Logo src={theme === 'light' ? PokemonLogo : PokemonDarkLogo} />
                 <Button onClick={toggleTheme}>Change Theme</Button>
-              </LogoWrapper>
+              </TopWrapper>
               <Searchbar value={word} handleChange={(e) => handleChange(e.target.value)} />
-              <ContentPokemons>
+              <WrapperPokemons>
                 {loading === false
                   ? <Cards query={word} cards={pokemons} />
                   : <Paragragh>This is Loading</Paragragh>}
-              </ContentPokemons>
-              <LogoWrapper>
-                <Button background="#2A2D32" whiteText={false} onClick={() => setCounter((c) => c + 20)}>Next 20 Pokemons</Button>
-              </LogoWrapper>
+              </WrapperPokemons>
+              <BottomWrapper>
+                <Button backgroundColor="#2A2D32" whiteText={false} onClick={() => setCounter((c) => c + 20)}>Next 20 Pokemons</Button>
+              </BottomWrapper>
             </Content>
           </Container>
         </Wrapper>
