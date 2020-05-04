@@ -20,14 +20,14 @@ const TopContent = styled.div`
   display: flex;
   flex-direction: column;
   margin: 2rem 2rem;
-  height: 20%;
+  height: 40%;
 `;
 
 const BottomContent = styled.div`
   display: flex;
   flex-direction: column;
   margin: 2rem 2rem;
-  height: 80%;
+  height: 60%;
 `;
 
 
@@ -37,24 +37,23 @@ const Sprite = styled.img`
 `;
 
 const Panel = ({ pokemonDetail }) => {
-  const { data, isLoading } = useFetchPokemon(pokemonDetail.url);
+  const { url } = pokemonDetail;
+  const { data, isLoading } = useFetchPokemon(url);
 
   console.log(data);
   return (
     <Content>
-
       {isLoading === false
         ? (
           <>
             <TopContent>
-              <Sprite src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" />
+              <Title>{data.name}</Title>
+              <Sprite src={`${data.sprites.front_default}`} />
             </TopContent>
             <BottomContent>
-              <Paragragh>{pokemonDetail.name}</Paragragh>
-              <Paragragh>{pokemonDetail.url}</Paragragh>
-              <Paragragh>This is a pokemon</Paragragh>
-              <Paragragh>This is a pokemon</Paragragh>
-              <Paragragh>This is a pokemon</Paragragh>
+              <Paragragh>{data.base_experience}</Paragragh>
+              <Paragragh>{data.height}</Paragragh>
+              <Paragragh>{data.order}</Paragragh>
             </BottomContent>
           </>
         )
