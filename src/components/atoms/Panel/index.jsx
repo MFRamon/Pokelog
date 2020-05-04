@@ -38,8 +38,7 @@ const Sprite = styled.img`
 `;
 
 const Panel = ({ pokemonDetail }) => {
-  const { url } = pokemonDetail;
-  const { data, isLoading } = useFetchPokemon(url);
+  const { data, isLoading } = useFetchPokemon(pokemonDetail.url);
 
   console.log(data);
   return (
