@@ -1,7 +1,7 @@
-import CardList from './CardList';
+import Cards from './Cards';
 import Card from './Card';
 
 export {
-  CardList,
+  Cards,
   Card,
 };

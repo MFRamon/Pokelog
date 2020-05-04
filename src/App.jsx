@@ -8,7 +8,7 @@ import {
 import PokemonLogo from './res/images/pokemon-logo.png';
 import PokemonDarkLogo from './res/images/pokemon-logo-dark.png';
 import Paragragh from './components/atoms/Paragraph';
-import { CardList } from './components/common';
+import { Cards } from './components/common';
 import { useFetch } from './utils/useFetch';
 
 const Wrapper = styled.div`
@@ -81,7 +81,7 @@ const App = () => {
               <Searchbar value={word} handleChange={(e) => handleChange(e.target.value)} />
               <ContentPokemons>
                 {loading === false
-                  ? <CardList query={word} cards={pokemons} />
+                  ? <Cards query={word} cards={pokemons} />
                   : <Paragragh>This is Loading</Paragragh>}
               </ContentPokemons>
               <LogoWrapper>
