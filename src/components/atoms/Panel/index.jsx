@@ -19,15 +19,16 @@ const Content = styled.div`
 const TopContent = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   margin: 2rem 2rem;
-  height: 40%;
+  height: 55%;
 `;
 
 const BottomContent = styled.div`
   display: flex;
   flex-direction: column;
   margin: 2rem 2rem;
-  height: 60%;
+  height: 45%;
 `;
 
 
