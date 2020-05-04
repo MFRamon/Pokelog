@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
@@ -82,8 +83,13 @@ const Aside = ({ pokemonDetail }) => (
   </Wrapper>
 );
 
+
+Aside.defaultProps = {
+  pokemonDetail: null,
+};
+
 Aside.propTypes = {
-  pokemonDetail: propTypes.node.isRequired,
+  pokemonDetail: propTypes.object,
 };
 
 export default Aside;

@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
@@ -15,6 +16,7 @@ const Cards = ({ cards, query, selected }) => {
         onClick={() => selected(pokemon)}
         name={pokemon.name}
         url={pokemon.url}
+        key={Math.random()}
       />
     ));
 
@@ -32,7 +34,7 @@ Cards.defaultProps = {
 };
 
 Cards.propTypes = {
-  cards: propTypes.node,
+  cards: propTypes.array,
   query: propTypes.string,
   selected: propTypes.func,
 };
