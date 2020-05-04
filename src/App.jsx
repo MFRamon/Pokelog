@@ -3,13 +3,13 @@ import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styling/theme';
 import { GlobalStyles } from './styling/global';
 import {
-  Layout, Container, Aside, Button, Searchbar, Logo,
+  Layout, Container, Button, Searchbar, Logo, Panel, Title,
 } from './components/atoms';
 import PokemonLogo from './res/images/pokemon-logo.png';
 import PokemonDarkLogo from './res/images/pokemon-logo-dark.png';
 import Paragragh from './components/atoms/Paragraph';
 import { Cards } from './components/common';
-import { useFetch } from './utils/useFetch';
+import { useFetchPokemons } from './utils/useFetch';
 
 const Wrapper = styled.div`
   margin: 10rem 0;
@@ -56,12 +56,41 @@ const WrapperPokemons = styled.div`
   overflow-x: hidden;
 `;
 
+const Aside = styled.aside`
+  position: relative;
+  display: flex;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    max-width: 60rem;
+    overflow: hidden;
+  }
+
+  @media (min-width: 1024px) {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 35vw;
+    background-color: ${({ theme }) => theme.rightLayout};
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 4px 25px;
+    border-width: 0.063rem;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.05);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
 const App = () => {
-  const [theme, setTheme] = useState('light');
   const [counter, setCounter] = useState(0);
+  const [theme, setTheme] = useState('light');
   const [word, setWord] = useState('');
   const [selectedItem, setSelectedItem] = useState(null);
-  const { pokemons, loading } = useFetch(`https://pokeapi.co/api/v2/pokemon/?offset=${counter}&limit=20`);
+  const { pokemons, loading } = useFetchPokemons(counter);
 
   const toggleTheme = () => {
     if (theme === 'light') {
@@ -103,9 +132,12 @@ const App = () => {
             </Content>
           </Container>
         </Wrapper>
-        <Aside pokemonDetail={selectedItem} />
+        <Aside>
+          {selectedItem !== null ? (
+            <Panel pokemonDetail={selectedItem} />
+          ) : <Title>No Pokemon Selected</Title>}
+        </Aside>
       </Layout>
-
     </ThemeProvider>
   );
 };
