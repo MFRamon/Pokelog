@@ -2,10 +2,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
-import Paragragh from '../Paragraph';
-import Title from '../Title';
+import Paragragh from '../../atoms/Paragraph';
+import Title from '../../atoms/Title';
 import { useFetchPokemon } from '../../../utils/useFetch';
-import Header from '../Header';
+import Header from '../../atoms/Header';
 
 
 const Content = styled.div`

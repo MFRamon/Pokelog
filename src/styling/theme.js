@@ -14,7 +14,7 @@ export const lightTheme = {
 export const darkTheme = {
   leftLayout: '#121212',
   rightLayout: '#2A2D32',
-  cardElevated: '#2A2D32',
+  cardElevated: '#1e2124',
   text: '#FFFFFF',
   buttonText: '#FFFFFF',
   inputBackground: '#2A2D32',
