@@ -1,5 +1,5 @@
 export const lightTheme = {
-  leftLayout: '#FFF510',
+  leftLayout: '#003A70',
   rightLayout: '#FBFBFB',
   cardElevated: '#FBFBFB',
   text: '#000000',
