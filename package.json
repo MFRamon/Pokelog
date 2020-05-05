@@ -8,10 +8,13 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "expect": "^25.5.0",
+    "jest-enzyme": "^7.1.2",
+    "jest-styled-components": "^7.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "react-test-renderer": "^16.13.1",
     "styled-components": "^5.1.0"
   },
   "scripts": {

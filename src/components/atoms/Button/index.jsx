@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const ButtonContainer = styled.button`
   color: ${({ theme }) => theme.buttonText};
-  background-color: ${({ theme, backgroundColor }) => (backgroundColor ? theme.nextButton : theme.cardElevated)};
+  background-color: ${({ theme }) => theme.nextButton};
   text-align: center;
   display: inline-block;
   white-space: nowrap;
@@ -34,21 +34,19 @@ const ButtonContainer = styled.button`
 `;
 
 
-const Button = ({ onClick, children, backgroundColor }) => (
-  <ButtonContainer backgroundColor={backgroundColor} onClick={onClick}>
+const Button = ({ onClick, children }) => (
+  <ButtonContainer onClick={onClick}>
     {children}
   </ButtonContainer>
 );
 
 Button.defaultProps = {
   children: 'Default Text',
-  backgroundColor: '',
 };
 
 Button.propTypes = {
   onClick: propTypes.func.isRequired,
   children: propTypes.node,
-  backgroundColor: propTypes.string,
 };
 
 

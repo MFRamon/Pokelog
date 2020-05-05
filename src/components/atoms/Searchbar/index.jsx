@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import propTypes from 'prop-types';
 
 const Control = styled.input`
   width: 81%;
@@ -22,7 +23,22 @@ const Control = styled.input`
 `;
 
 
-// eslint-disable-next-line react/prop-types
-const Searchbar = ({ value, handleChange }) => (<Control value={value} onChange={handleChange} placeholder="Search for Pokemons" type="text" />);
+const Searchbar = ({ value, handleChange }) => (
+  <Control
+    value={value}
+    onChange={handleChange}
+    placeholder="Search for Pokemons"
+    type="text"
+  />
+);
+
+Searchbar.defaultProps = {
+  value: '',
+};
+
+Searchbar.propTypes = {
+  handleChange: propTypes.func.isRequired,
+  value: propTypes.string,
+};
 
 export default Searchbar;

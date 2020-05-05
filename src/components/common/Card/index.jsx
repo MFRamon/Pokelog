@@ -67,9 +67,7 @@ const Sprite = styled.img`
   height: 5em;
 `;
 
-const Card = ({
-  name, url, onClick,
-}) => {
+const Card = ({ name, url, onClick }) => {
   const pokemonIndex = url.split('/')[url.split('/').length - 2];
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
 
