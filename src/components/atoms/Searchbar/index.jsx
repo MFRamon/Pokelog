@@ -15,7 +15,6 @@ const Control = styled.input`
   background-color: ${({ theme }) => theme.inputBackground};
   font-size: 0.9375rem;
   font-family: 'Affogato Regular';
-  border-color: ${({ theme }) => theme.searchBorder};
   
   ::placeholder {
     color: ${({ theme }) => theme.placeholder};

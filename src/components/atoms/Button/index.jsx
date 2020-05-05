@@ -23,14 +23,13 @@ const ButtonContainer = styled.button`
   border-radius: 0.5rem;
   transition: transform 0.2s ease 0s;
   font-family: 'Affogato Regular';
-  border-color: ${({ theme }) => theme.searchBorder};
 
-  &:hover {
+  /* &:hover {
     cursor: pointer;
     background-color: ${({ theme }) => theme.cardElevated};
     box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 25px;
     transform: translate(0px, -2px);
-    }
+    } */
 `;
 
 

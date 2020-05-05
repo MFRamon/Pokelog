@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styling/theme';
-import { GlobalStyles } from './styling/global';
+import GlobalStyles from './styling/global';
 import {
-  Layout, Container, Button, Searchbar, Logo, Panel, Title,
+  Layout, Container, Button, Searchbar, Logo, Title,
 } from './components/atoms';
 import PokemonLogo from './res/images/pokemon-logo.png';
 import PokemonDarkLogo from './res/images/pokemon-logo-dark.png';
 import Paragragh from './components/atoms/Paragraph';
-import { Cards } from './components/common';
+import { Cards, Panel } from './components/common';
 import { useFetchPokemons } from './utils/useFetch';
 
 const Wrapper = styled.div`

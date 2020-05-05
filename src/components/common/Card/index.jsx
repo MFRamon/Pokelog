@@ -42,6 +42,7 @@ const TopContent = styled.div`
     justify-content: center;
     align-items: center;
 
+
     p {
         align-self: unset;
         max-height: 60px;

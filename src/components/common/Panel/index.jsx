@@ -2,9 +2,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
-import Paragragh from '../Paragraph';
-import Title from '../Title';
+import { Title, Paragraph } from '../../atoms';
 import { useFetchPokemon } from '../../../utils/useFetch';
+import Header from '../../atoms/Header';
 
 
 const Content = styled.div`
@@ -17,18 +17,27 @@ const Content = styled.div`
 `;
 
 const TopContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   margin: 2rem 2rem;
-  height: 55%;
+  justify-content: space-between;
+  height: 50%;
+`;
+
+const InnerWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  margin: 2rem 2rem;
+`;
+
+const HeaderContent = styled.div`
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 `;
 
 const BottomContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 2rem;
-  height: 45%;
+  align-items: center;
+  justify-content: center;
 `;
 
 
@@ -50,11 +59,20 @@ const Panel = ({ pokemonDetail }) => {
               <Title>{data.name}</Title>
               <Sprite src={`${data.sprites.front_default}`} />
             </TopContent>
-            <BottomContent>
-              <Paragragh>{data.base_experience}</Paragragh>
-              <Paragragh>{data.height}</Paragragh>
-              <Paragragh>{data.order}</Paragragh>
-            </BottomContent>
+
+            <InnerWrapper>
+              <HeaderContent>
+                <Header>Base Experience</Header>
+                <Header>Height</Header>
+                <Header>Order</Header>
+              </HeaderContent>
+
+              <BottomContent>
+                <Paragraph>{data.base_experience}</Paragraph>
+                <Paragraph>{data.height}</Paragraph>
+                <Paragraph>{data.order}</Paragraph>
+              </BottomContent>
+            </InnerWrapper>
           </>
         )
 
