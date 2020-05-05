@@ -1,4 +1,3 @@
-import Panel from './Panel';
 import Button from './Button';
 import Container from './Container';
 import Layout from './Layout';
@@ -9,7 +8,6 @@ import Header from './Header';
 
 
 export {
-  Panel,
   Button,
   Container,
   Layout,
