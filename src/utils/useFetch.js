@@ -1,10 +1,13 @@
+/* eslint-disable import/prefer-default-export */
 import { useEffect, useState } from 'react';
-// eslint-disable-next-line import/prefer-default-export
-export const useFetch = (url) => {
+
+const BASE_RUL = 'https://pokeapi.co/api/v2/pokemon/';
+
+export const useFetchPokemons = (offset) => {
   const [pokemons, setPokemons] = useState({ pokemons: [], loading: true });
 
   useEffect(() => {
-    fetch(url)
+    fetch(`${BASE_RUL}?offset=${offset}&limit=20`)
       .then((response) => response.json())
       .then((response) => {
         if (response) {
@@ -12,7 +15,27 @@ export const useFetch = (url) => {
         }
       })
       .catch(console.log);
-  }, [url]);
+  }, [offset]);
 
   return pokemons;
+};
+
+export const useFetchPokemon = (pokemonUrl) => {
+  const [data, setData] = useState({ data: [], isLoading: true });
+
+  useEffect(() => {
+    fetch(`${pokemonUrl}`)
+      .then((response) => response.json())
+      .then((response) => {
+        if (response) {
+          setData(
+            { data: response, isLoading: false },
+            () => {},
+          );
+        }
+      })
+      .catch(console.log);
+  }, [pokemonUrl]);
+
+  return data;
 };

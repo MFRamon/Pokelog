@@ -1,13 +1,13 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Card from '../../../components/common/Card';
+import Cards from '.';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('<Card />', () => {
+describe('<Cards />', () => {
   it('renders component', () => {
-    const wrapper = shallow(<Card />);
+    const wrapper = shallow(<Cards />);
     expect(wrapper).toBeTruthy();
   });
 });

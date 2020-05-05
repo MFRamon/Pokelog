@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
@@ -7,11 +8,16 @@ const Wrapper = styled.div`
   display: inline-block;
 `;
 
-const CardList = ({ cards, query }) => {
+const Cards = ({ cards, query, selected }) => {
   const pokemons = cards
     .filter((pokemon) => (pokemon.name.toLowerCase().indexOf(query.toLowerCase()) >= 0))
     .map((pokemon) => (
-      <Card name={pokemon.name} url={pokemon.url} />
+      <Card
+        onClick={() => selected(pokemon)}
+        name={pokemon.name}
+        url={pokemon.url}
+        key={Math.random()}
+      />
     ));
 
   return (
@@ -21,15 +27,17 @@ const CardList = ({ cards, query }) => {
   );
 };
 
-CardList.defaultProps = {
-  query: '',
+Cards.defaultProps = {
+  query: null,
   cards: [],
+  selected: undefined,
 };
 
-CardList.propTypes = {
-  cards: propTypes,
+Cards.propTypes = {
+  cards: propTypes.array,
   query: propTypes.string,
+  selected: propTypes.func,
 };
 
 
-export default CardList;
+export default Cards;

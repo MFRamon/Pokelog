@@ -1,4 +1,4 @@
-import Aside from './Aside';
+import Panel from './Panel';
 import Button from './Button';
 import Container from './Container';
 import Layout from './Layout';
@@ -8,7 +8,7 @@ import Logo from './Logo';
 
 
 export {
-  Aside,
+  Panel,
   Button,
   Container,
   Layout,
