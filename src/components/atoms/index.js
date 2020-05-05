@@ -5,6 +5,7 @@ import Title from './Title';
 import Searchbar from './Searchbar';
 import Logo from './Logo';
 import Header from './Header';
+import Paragraph from './Paragraph';
 
 
 export {
@@ -15,4 +16,5 @@ export {
   Searchbar,
   Logo,
   Header,
+  Paragraph,
 };

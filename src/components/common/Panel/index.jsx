@@ -2,8 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
-import Paragragh from '../../atoms/Paragraph';
-import Title from '../../atoms/Title';
+import { Title, Paragraph } from '../../atoms';
 import { useFetchPokemon } from '../../../utils/useFetch';
 import Header from '../../atoms/Header';
 
@@ -69,9 +68,9 @@ const Panel = ({ pokemonDetail }) => {
               </HeaderContent>
 
               <BottomContent>
-                <Paragragh>{data.base_experience}</Paragragh>
-                <Paragragh>{data.height}</Paragragh>
-                <Paragragh>{data.order}</Paragragh>
+                <Paragraph>{data.base_experience}</Paragraph>
+                <Paragraph>{data.height}</Paragraph>
+                <Paragraph>{data.order}</Paragraph>
               </BottomContent>
             </InnerWrapper>
           </>
