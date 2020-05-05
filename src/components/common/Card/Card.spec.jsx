@@ -2,7 +2,7 @@
 import React from 'react';
 import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Card from '..';
+import Card from '.';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -23,7 +23,6 @@ describe('<Card /> component', () => {
 
   describe('<Card /> rendering', () => {
     it('should render correctly', () => {
-      console.log(wrapper.debug());
       expect(wrapper).toHaveLength(1);
     });
 
