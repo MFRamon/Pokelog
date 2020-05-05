@@ -7,7 +7,7 @@ export const lightTheme = {
   inputBackground: '#FFFFFF',
   placeholder: '#000000',
   searchBorder: 'transparent',
-  nextButton: '#3D7DCA',
+  nextButton: '#FFF510',
   cardCover: '#FFFFFF',
 };
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styling/theme';
-import { GlobalStyles } from './styling/global';
+import GlobalStyles from './styling/global';
 import {
   Layout, Container, Button, Searchbar, Logo, Panel, Title,
 } from './components/atoms';
