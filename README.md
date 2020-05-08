@@ -1,4 +1,4 @@
-# Pokeshop
+# Pokelog
 
 ![Pokemon Logo](https://raw.githubusercontent.com/MFRamon/Pokeshop/master/pokemon-logo.png)
 
@@ -15,11 +15,11 @@ The tech stack used is:
 
 Future Features to implement: 
 
-* Master-detail view on each Pokemon
+* Entire list based search
 * Allow the users to search by Pokemon Categories
 * Add Animation on Load on the Browser
 * Add Responsiveness for Mobile
-
+* Show more relevant characteristics of a Pokemon
 
 
 **Hosted by Vercel(formely Zeit)**
