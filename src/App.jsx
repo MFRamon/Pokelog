@@ -3,11 +3,10 @@ import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styling/theme';
 import GlobalStyles from './styling/global';
 import {
-  Layout, Container, Button, Searchbar, Logo, Title,
+  Layout, Container, Button, Searchbar, Logo, Title, Paragraph,
 } from './components/atoms';
 import PokemonLogo from './res/images/pokemon-logo.png';
 import PokemonDarkLogo from './res/images/pokemon-logo-dark.png';
-import Paragragh from './components/atoms/Paragraph';
 import { Cards, Panel } from './components/common';
 import { useFetchPokemons } from './utils/useFetch';
 
@@ -123,7 +122,7 @@ const App = () => {
               <WrapperPokemons>
                 {loading === false
                   ? <Cards selected={handleSelectedPokemon} query={word} cards={pokemons} />
-                  : <Paragragh>This is Loading</Paragragh>}
+                  : <Paragraph>Loading</Paragraph>}
               </WrapperPokemons>
               <BottomWrapper>
                 <Button backgroundColor="#2A2D32" whiteText={false} onClick={() => setCounter((c) => c + 20)}>Next 20</Button>
