@@ -59,7 +59,6 @@ const WrapperPokemons = styled.div`
 const Aside = styled.aside`
   position: relative;
   display: flex;
-  width: 100%;
 
   @media (min-width: 1024px) {
     max-width: 60rem;
