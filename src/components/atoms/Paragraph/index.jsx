@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Paragragh = styled.p`
+const Paragraph = styled.p`
   color: ${({ theme }) => theme.text};
   font-size: 0.9375rem;
   font-family: 'Affogato Regular';
@@ -13,4 +13,4 @@ const Paragragh = styled.p`
   }
 `;
 
-export default Paragragh;
+export default Paragraph;
