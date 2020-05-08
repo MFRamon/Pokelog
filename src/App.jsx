@@ -126,7 +126,7 @@ const App = () => {
                   : <Paragragh>This is Loading</Paragragh>}
               </WrapperPokemons>
               <BottomWrapper>
-                <Button backgroundColor="#2A2D32" whiteText={false} onClick={() => setCounter((c) => c + 20)}>Next 20 Pokemons</Button>
+                <Button backgroundColor="#2A2D32" whiteText={false} onClick={() => setCounter((c) => c + 20)}>Next 20</Button>
               </BottomWrapper>
             </Content>
           </Container>
