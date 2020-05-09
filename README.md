@@ -20,14 +20,14 @@ Future Features to implement:
 * Add Animation on Load on the Browser
 * Add Responsiveness for Mobile
 
-* Show more relevant Pokemon characteristics such as: 
-⋅⋅* Shiny/ Normal Sprite
-⋅⋅* Type
-⋅⋅* Height
-⋅⋅* Weight
-⋅⋅* Description
-⋅⋅* Type's Weakness
-⋅⋅* Evolutive Family / How to evolute 
-⋅⋅* Base Stats
+ Show more relevant Pokemon characteristics such as: 
+* Shiny/ Normal Sprite
+* Type
+* Height
+* Weight
+* Description
+* Type's Weakness
+* Evolutive Family / How to evolute 
+* Base Stats
 
 **Hosted by ![Vercel (Formerly Zeit)](https://vercel.com)**
