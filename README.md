@@ -19,8 +19,15 @@ Future Features to implement:
 * Allow the users to search by Pokemon Categories
 * Add Animation on Load on the Browser
 * Add Responsiveness for Mobile
-* Show more relevant characteristics of a Pokemon
 
+* Show more relevant Pokemon characteristics such as: 
+⋅⋅* Shiny/ Normal Sprite
+⋅⋅* Type
+⋅⋅* Height
+⋅⋅* Weight
+⋅⋅* Description
+⋅⋅* Type's Weakness
+⋅⋅* Evolutive Family / How to evolute 
+⋅⋅* Base Stats
 
-**Hosted by Vercel(formely Zeit)**
-
+**Hosted by ![Vercel (Formerly Zeit)](https://vercel.com)**
